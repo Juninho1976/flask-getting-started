@@ -1,0 +1,27 @@
+from flask import Flask
+from datetime import datetime
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def welcome():
+	return "Welcome to my Flash Cards application!"
+	
+
+@app.route("/date")
+def date():
+	return "Whats the time Mr Wolf its:" + str(datetime.now())
+	
+
+i = 0
+
+@app.route("/views")
+def views():
+	global i
+	i = i + 1
+	return "This page has been viewed: " + str(i) + " times!"
+	
+
+if __name__ == "__main__":
+   app.run(host='0.0.0.0', port=80, debug=True)
