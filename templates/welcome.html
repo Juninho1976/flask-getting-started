@@ -9,8 +9,14 @@
 	<p>
 		This is the flashcards page!	
 	</p>
-	<p>
-		{{message}}
-	</p>
+	<h2>Flash Cards</h2>
+	<ul>
+		{% for card in cards %}
+			<li>
+				<a href="{{ url_for('card_view', index=loop.index0) }}">
+					{{ card.question }}
+				</a>
+		{% endfor %}
+	</ul>
 </body>
 </html>

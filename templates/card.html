@@ -10,7 +10,19 @@
 	Answer: 	{{ card.answer }}
 	<p>
 		<a href="{{ url_for('welcome') }}">Home</a> <br>
-		
+		<br>
+		<button>
+		{% if index >0  %}
+			<a href="{{ url_for('card_view', index=index - 1) }}">
+				Prev card
+			</a>
+		{% else %}
+			<a href="{{ url_for('card_view', index=0) }}">
+				Start card
+			</a> 
+		{% endif %}	
+		</button>
+		<br>
 		<button>
 		{% if index < max_index %}
 			<a href="{{ url_for('card_view', index=index + 1) }}">
