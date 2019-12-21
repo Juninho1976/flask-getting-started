@@ -1,6 +1,6 @@
 from flask import Flask, render_template, abort
 
-from model import db
+from model impobbrt db
 
 app = Flask(__name__)
 
