@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UF-8">
-	<title>Welcome!</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title%}Welcome{% endblock %}
+
+{% block content %}
 	<h1>Welcome to my page!</h1>
 	<p>
 		This is the flashcards page!	
@@ -18,5 +16,11 @@
 				</a>
 		{% endfor %}
 	</ul>
-</body>
-</html>
+	<br>
+		Link to add a new card:
+		<a href="{{ url_for('add_card') }}">
+		Add a new card!
+		</a>	
+	<p>
+	</p>
+{% endblock %}

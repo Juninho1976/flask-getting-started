@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Add Card</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Add Card{% endblock %}
+
+{% block content %}
 	<h1>Add a new card</h1>
 	<form method="post">
 		<p>
@@ -16,6 +14,9 @@
 			<input type="text" name="answer">
 		</p>
 		<button type="submit">Create</button>
+		<br>
+		<a href="{{ url_for('welcome') }}">
+		Back to home
+		</a>	
 	</form>
-</body>
-</html>
+{% endblock %}
